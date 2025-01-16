@@ -4,19 +4,9 @@
     height: 11vh;
   }
   
-  .navbar .ant-menu-item {
-    font-size: 1rem;
-    padding: 1rem 1.5rem;
-    border-radius: 15px;
-    border: 1px solid #5B3911;
+  .container-options{
+    width: 100%;
+    height: 11vh;
+    padding: 2rem;
+    background-color: red;
   }
-  
-  .navbar .ant-menu-item-selected {
-    background-color: #B67221 !important;
-    border: none;
-  }
-  
-  .navbar .ant-menu-horizontal {
-    border-bottom: none;
-  }
-  
