@@ -1,38 +1,36 @@
-import './navbar.css';
-import { Menu, Button, Row, Col } from 'antd';
 import { useState } from 'react';
-import { MenuOutlined } from '@ant-design/icons';
-
+import './navbar.css';
 
 export const Navbar = () => {
-  const [collapsed, setCollapsed] = useState(true);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const toggleCollapsed = () => {
-    setCollapsed(!collapsed);
+  const handleItemClick = (index: number) => {
+    setActiveIndex(index);
   };
 
   return (
-    <nav className='navbar'>
-      <Row className="w-100">
-        <Col xs={24} sm={12} md={6} lg={6}>
-          <div className="navbar-brand">Coffee Panda</div>
-        </Col>
-        <Col xs={0} sm={12} md={18} lg={18} className="d-none d-sm-block">
-         <div className='container-options'>
-
-         </div>
-        </Col>
-        <Col xs={24} sm={0} className="d-block d-sm-none">
-          <Button type="primary" onClick={toggleCollapsed} icon={<MenuOutlined />} />
-          {!collapsed && (
-            <Menu mode="horizontal" >
-              <Menu.Item key="coffee">Café</Menu.Item>
-              <Menu.Item key="tech-service">Servicio Técnico</Menu.Item>
-              <Menu.Item key="barista-courses">Cursos de Barismo</Menu.Item>
-            </Menu>
-          )}
-        </Col>
-      </Row>
+    <nav className="navbar navbar-expand-lg">
+      <div className="container-fluid">
+        <div className='w-50 w-sm-75 p-1'>
+          <h1>Panda Café</h1>
+        </div>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav w-100 h-100">
+            {['Servicios Técnicos', 'Café', 'Capacitaciones'].map((item, index) => (
+              <li
+                key={index}
+                className={`nav-item ${activeIndex === index ? 'active' : ''}`}
+                onClick={() => handleItemClick(index)}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </nav>
   );
 };
