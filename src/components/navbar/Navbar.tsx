@@ -11,8 +11,9 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
-        <div className='w-50 w-sm-75 p-1'>
-          <h1>Panda Café</h1>
+        <div className='container-logo-nav w-50 w-sm-75' >
+          <img className='img-logo-nav' src="/figura-panda-transparent.png" alt="panda-logo" />
+          <img className='img-logo-nav' src="/letras-panda-transparent.png" alt="panda-letters" />
         </div>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>

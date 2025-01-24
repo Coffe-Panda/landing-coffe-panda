@@ -1,3 +1,33 @@
 #root{
 background-color: #FFFF;
 }
+
+.btn-servicio{
+    background-color: #b67321ab;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    width: fit-content;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1.6rem;
+    text-align: center;
+}
+.btn-servicio:hover{
+    cursor: pointer;
+}
+
+@media(max-width:768px){
+    .btn-servicio{
+        background-color: #B67221;
+        border: none;
+        color: white;
+        font-weight: bold;
+        padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+        width: fit-content;
+        border-radius: 15px;
+        text-decoration: none;
+        font-size: 1.6rem;
+    }
+}
