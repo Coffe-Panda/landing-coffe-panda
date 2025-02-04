@@ -1,17 +1,31 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './navbar.css';
 
 export const Navbar = () => {
+  const navigate = useNavigate();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const routes: { [key: number]: string } = {
+    0: 'servicios',
+    1: 'cafe',
+    2: 'cursos',
+  };
 
   const handleItemClick = (index: number) => {
     setActiveIndex(index);
+    navigate(routes[index] || '');
+  };
+
+  const handleLogoClick = () => {
+    setActiveIndex(null);
+    navigate('');
   };
 
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
-        <div className='container-logo-nav w-50 w-sm-75' >
+        <div className='container-logo-nav w-50 w-sm-75' onClick={handleLogoClick}>
           <img className='img-logo-nav' src="/figura-panda-transparent.png" alt="panda-logo" />
           <img className='img-logo-nav' src="/letras-panda-transparent.png" alt="panda-letters" />
         </div>
