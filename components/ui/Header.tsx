@@ -10,7 +10,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 px-4 lg:px-6 h-16 flex items-center border-b bg-white">
       <Link className="flex items-center gap-2 font-semibold" href="#">
         <Coffee className="h-6 w-6" />
-        <span className="font-bold">Panda Café</span>
+        <p className="font-bold">Panda Café</p>
       </Link>
       {/* Botón de hamburguesa para móviles */}
       <button
@@ -29,24 +29,28 @@ export default function Header() {
         <Link
           className="block px-4 py-2 text-sm font-medium hover:underline underline-offset-4 lg:inline"
           href="#"
+          onClick={() => setIsMenuOpen(false)}
         >
           Inicio
         </Link>
         <Link
           className="block px-4 py-2 text-sm font-medium hover:underline underline-offset-4 lg:inline"
           href="#tipos-cafe"
+          onClick={() => setIsMenuOpen(false)}
         >
           Nuestros Cafés
         </Link>
         <Link
           className="block px-4 py-2 text-sm font-medium hover:underline underline-offset-4 lg:inline"
           href="#servicio-tecnico"
+          onClick={() => setIsMenuOpen(false)}
         >
           Servicio Técnico
         </Link>
         <Link
           className="block px-4 py-2 text-sm font-medium hover:underline underline-offset-4 lg:inline"
           href="#contacto"
+          onClick={() => setIsMenuOpen(false)}
         >
           Contacto
         </Link>

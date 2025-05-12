@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Coffee } from "lucide-react";
-import Header from "@/components/Header";
+import { ArrowLeft } from "lucide-react";
+import { Footer } from "@/components/ui/Footer";
+import Header from "@/components/ui/Header";
 
 import { Button } from "@/components/ui/button";
 import { cafeData } from "@/lib/cafe-data";
@@ -33,11 +34,11 @@ export default function CafeDetailPage({
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
-        <section className="w-full py-6 md:py-6 lg:py-6 bg-[#f8f3e9]">
+        <section className="w-full py-6 md:py-6 lg:py-6 bg-[#f8f3e9] pt-1">
           <div className="container px-4 md:px-6">
             <Link
               href="/#tipos-cafe"
-              className="inline-flex items-center text-[#5c3d2e] hover:underline mb-8"
+              className="inline-flex items-center text-[#5c3d2e] hover:underline mb-4"
             >
               <ArrowLeft className="mr-2 h-4 w-4" />
               Volver a todos los cafés
@@ -77,7 +78,7 @@ export default function CafeDetailPage({
                     {cafe.flavorProfile.map((flavor, index) => (
                       <span
                         key={index}
-                        className="px-3 py-1 bg-[#e6d7c3] text-[#5c3d2e] rounded-full text-sm"
+                        className="fw-bold px-3 py-1 bg-[#e6d7c3] text-[#5c3d2e] rounded-full text-sm "
                       >
                         {flavor}
                       </span>
@@ -173,19 +174,7 @@ export default function CafeDetailPage({
           </div>
         </section>
       </main>
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full border-t px-4 md:px-6">
-        <p className="text-xs text-gray-700">
-          © 2025 Panda Café. Todos los derechos reservados.
-        </p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
-            Términos de Servicio
-          </Link>
-          <Link className="text-xs hover:underline underline-offset-4" href="#">
-            Política de Privacidad
-          </Link>
-        </nav>
-      </footer>
+      <Footer />
     </div>
   );
 }
