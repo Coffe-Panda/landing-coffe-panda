@@ -29,7 +29,6 @@ export function ImageWithSkeleton({
     <div className={cn("relative w-full h-full", wrapperClassName)}>
       {!loaded && !hasError && (
         <div className="absolute inset-0 z-10 flex items-center justify-center bg-gray-300 animate-pulse rounded-md">
-          {/* Spinner opcional (puedes reemplazar por un ícono si quieres) */}
           <svg
             className="w-6 h-6 text-gray-500 animate-spin"
             xmlns="http://www.w3.org/2000/svg"

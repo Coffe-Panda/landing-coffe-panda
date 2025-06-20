@@ -81,28 +81,39 @@ export default function Home() {
                 </p>
               </div>
             </div>
+             <section id="tipos-cafe" className="w-full py-24">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#5c3d2e]">
+                  Nuestros Tipos de Café
+                </h2>
+                <p className="max-w-[700px] text-gray-700 md:text-xl">
+                  Descubre nuestra selección de cafés de origen único y mezclas
+                  exclusivas.
+                </p>
+              </div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
               {[
                 {
-                  href: "/tipos-cafe/blend-pardo",
-                  alt: "Café Arábica",
-                  title: "Blend Pardo",
-                  description:
-                    "Nuestro café Arábica se caracteriza por su sabor suave y aromático, con notas frutales y un toque de acidez.",
-                },
-                {
-                  href: "/tipos-cafe/blend-panda",
-                  alt: "Café Robusta",
-                  title: "Blend Panda",
-                  description:
-                    "El café Robusta tiene un sabor más intenso y amargo, con mayor contenido de cafeína y un cuerpo más denso.",
-                },
-                {
-                  href: "/tipos-cafe/geisha",
-                  alt: "Café Colombiano",
-                  title: "Geisha",
-                  description:
-                    "El café de Colombia es reconocido mundialmente por su equilibrio perfecto entre acidez, cuerpo y aroma.",
+                  href: "/tipos-cafe/parainema",
+                  alt: "parainema",
+                  title: "Parainema",
+                  description: [
+                    { label: "Variedad", value: "Parainema" },
+                    { label: "Proceso", value: "lavado" },
+                    { label: "Altura", value: "1400 msnm" },
+                    { label: "Puntuación SCA", value: "85 pts" },
+                    {
+                      value:
+                        "Cultivado de forma completamente natural, sin intervención humana, sin pesticidas, fertilizantes ni modificaciones.",
+                    },
+                    {
+                      value:
+                        "La planta ha crecido libremente, permitiendo que sus sabores auténticos se desarrollen de manera pura y espontánea.",
+                    },
+                  ],
                 },
               ].map((item) => (
                 <Link
@@ -122,12 +133,24 @@ export default function Home() {
                       src="/placeholder.svg?height=300&width=300"
                     />
                   </div>
-                  <div className="space-y-2 text-center">
-                    <p className="text-gray-700">{item.description}</p>
-                  </div>
+                  <ul className="space-y-1 text-gray-700 p-5">
+                    {item.description.map((desc, idx) => (
+                      <li key={idx}>
+                        {desc.label ? (
+                          <span>
+                            <strong>{desc.label}:</strong> {desc.value}
+                          </span>
+                        ) : (
+                          desc.value
+                        )}
+                      </li>
+                    ))}
+                  </ul>
                 </Link>
               ))}
             </div>
+          </div>
+        </section>
           </div>
         </section>
 
