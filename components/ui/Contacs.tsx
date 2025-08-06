@@ -26,7 +26,7 @@ export const Contacs = () => {
                   <Phone className="h-10 w-10 text-[#5c3d2e]" />
                   <h3 className="text-xl font-bold text-[#5c3d2e]">Whatsapp</h3>
                   <p className="text-gray-700 hover:underline">
-                    +504 3336-3825
+                    +504 96816507
                   </p>
                 </a>
               </div>
